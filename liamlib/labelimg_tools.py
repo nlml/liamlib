@@ -1,4 +1,22 @@
 import xml.etree.ElementTree as ET
+import matplotlib.pyplot as plt
+import matplotlib.patches as patches
+
+
+def plot_img_with_rects(im, rects):
+    # Plots an image with bounding boxes superimposed
+    fig, ax = plt.subplots(1, figsize=[7, 7])
+    # Display the image
+    ax.imshow(im)
+    for r in rects:
+        x, y, x1, y1 = r
+        w = x1 - x
+        h = y1 - y
+        # Create a Rectangle patch
+        rect = patches.Rectangle((x, y), w, h, linewidth=3, edgecolor='r', facecolor='none')
+        # Add the patch to the Axes
+        ax.add_patch(rect)
+    plt.show()
 
 
 def make_labelimg_xml(imgfilename, boxes):
