@@ -1,3 +1,5 @@
+# from https://gist.github.com/Tsarpf/10436240
+
 import urllib2
 import threading
 from Queue import Queue
