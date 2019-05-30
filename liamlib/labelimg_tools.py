@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 
 
-def plot_img_with_rects(im, rects):
+def plot_img_with_rects(im, rects, edgecolor='r'):
     # Plots an image with bounding boxes superimposed
     fig, ax = plt.subplots(1, figsize=[7, 7])
     # Display the image
@@ -13,7 +13,7 @@ def plot_img_with_rects(im, rects):
         w = x1 - x
         h = y1 - y
         # Create a Rectangle patch
-        rect = patches.Rectangle((x, y), w, h, linewidth=3, edgecolor='r', facecolor='none')
+        rect = patches.Rectangle((x, y), w, h, linewidth=3, edgecolor=edgecolor, facecolor='none')
         # Add the patch to the Axes
         ax.add_patch(rect)
     plt.show()
